@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>데님 프리미엄 인덱스</title>
+    <meta name="description" content="일부 청바지가 정가보다 높은 리셀 가격을 형성하는 이유를 분석하는 정적 아카이브입니다.">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+      <header class="site-header">
+        <a class="brand" href="index.html#index" aria-label="Denim Index 홈">
+          <span>Denim Index</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="내비게이션 열기" aria-expanded="false">메뉴</button>
+        <nav class="site-nav" aria-label="주요 메뉴">
+          <button id="searchToggle" class="nav-search-toggle" type="button" aria-expanded="false" aria-controls="searchOverlay">Search</button>
+          <button id="sizingToggle" class="nav-search-toggle" type="button" aria-expanded="false" aria-controls="sizingOverlay">Sizing</button>
+          <button id="brandToggle" class="nav-search-toggle" type="button" aria-expanded="false" aria-controls="brandOverlay">Brand</button>
+        </nav>
+        <section id="searchOverlay" class="search-overlay" aria-label="제품 검색" hidden>
+          <div class="search-overlay-head">
+            <strong>SEARCH DENIMS</strong>
+            <button id="searchClose" type="button">[ Close ]</button>
+          </div>
+          <label class="search-overlay-field" for="denimSearchInput">
+            <span class="visually-hidden">제품 검색어</span>
+            <input id="denimSearchInput" type="search" placeholder="Type to search denims" autocomplete="off">
+          </label>
+          <label class="search-photo-trigger" for="denimSearchPhoto">
+            <input id="denimSearchPhoto" type="file" accept="image/*">
+            <span>Search by Photo</span>
+          </label>
+          <div id="searchPhotoPreview" class="search-photo-preview" hidden>
+            <img id="searchPreviewImage" alt="검색할 데님 사진 미리보기">
+            <div>
+              <strong id="searchPhotoName"></strong>
+              <button id="clearSearchPhoto" type="button">사진 지우기</button>
+            </div>
+          </div>
+          <button id="viewAllSearch" class="search-view-all" type="button">View All</button>
+          <p id="searchStatus" class="search-status" aria-live="polite"></p>
+          <div id="searchResults" class="search-results"></div>
+        </section>
+        <section id="sizingOverlay" class="search-overlay sizing-overlay" aria-label="데님 사이즈 측정 가이드" hidden>
+          <div class="search-overlay-head">
+            <strong>SIZING GUIDE</strong>
+            <button id="sizingClose" type="button">[ Close ]</button>
+          </div>
+          <figure class="sizing-guide-figure">
+            <img src="assets/sizing-guide.png" alt="Waist, rise, thigh, length, hem 측정 위치가 표시된 데님 사이즈 가이드">
+          </figure>
+        </section>
+        <section id="brandOverlay" class="search-overlay brand-overlay" aria-label="브랜드 목록" hidden>
+          <div class="search-overlay-head">
+            <strong>BRANDS</strong>
+            <button id="brandClose" type="button">[ Close ]</button>
+          </div>
+          <nav id="brandAlphabet" class="alphabet-nav" aria-label="브랜드 알파벳 인덱스"></nav>
+          <div id="brandDirectory" class="brand-directory"></div>
+        </section>
+      </header>
+
+    <main>
+      <section id="index" class="page">
+        <div id="productGrid" class="product-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>가격 환산 기준: USD 1 ≈ 1,560원 · EUR 1 ≈ 1,790원 · SEK 1 ≈ 164원</p>
+    </footer>
+
+    <script src="script.js?v=20260615-14"></script>
+  </body>
+</html>
